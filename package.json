@@ -1,0 +1,46 @@
+{
+  "name": "icon-dock-nav",
+  "version": "1.0.0",
+  "description": "macOS-style dock navigation component for React with smooth magnification effects",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "license": "MIT",
+  "author": "klazapp",
+  "keywords": [
+    "react",
+    "navigation",
+    "dock",
+    "macos",
+    "component",
+    "ui",
+    "magnification",
+    "navbar"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klazapp/icon-dock-nav.git"
+  },
+  "bugs": {
+    "url": "https://github.com/klazapp/icon-dock-nav/issues"
+  },
+  "homepage": "https://github.com/klazapp/icon-dock-nav#readme",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "typescript": "^5.3.0"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
+}
