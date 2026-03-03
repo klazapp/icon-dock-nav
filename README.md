@@ -1,4 +1,4 @@
-# @security-scan-console/dock-nav
+# icon-dock-nav
 
 A macOS-style dock navigation component for React with smooth magnification effects.
 
@@ -7,13 +7,13 @@ A macOS-style dock navigation component for React with smooth magnification effe
 ## Installation
 
 ```bash
-npm install @security-scan-console/dock-nav
+npm install icon-dock-nav
 ```
 
 ## Usage
 
 ```tsx
-import { DockNav, DockNavItem } from "@security-scan-console/dock-nav";
+import { DockNav, DockNavItem } from "icon-dock-nav";
 
 const HomeIcon = (props) => (
   <svg {...props} viewBox="0 0 24 24" fill="currentColor">
