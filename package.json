@@ -1,6 +1,6 @@
 {
   "name": "icon-dock-nav",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "macOS-style dock navigation component for React with smooth magnification effects",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

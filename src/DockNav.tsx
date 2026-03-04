@@ -264,8 +264,7 @@ export const DockNav: React.FC<DockNavProps> = ({
     if (hideTooltips) return false;
     const isClosest = closestIndex === index;
     const isFocused = focusedId === id;
-    const isActive = currentActiveId === id;
-    return (isClosest || isFocused) && !isActive;
+    return isClosest || isFocused;
   };
 
   const transitionStyle = prefersReducedMotion
