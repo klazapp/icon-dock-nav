@@ -58,8 +58,10 @@ export interface DockNavProps {
   activeId?: string;
   /** Enable scroll-based active detection via IntersectionObserver */
   observeScroll?: boolean;
-  /** Base icon size in pixels (default: 48) */
+  /** Base button/container size in pixels (default: 48) */
   baseSize?: number;
+  /** Icon size in pixels (default: baseSize) */
+  iconSize?: number;
   /** Max magnification multiplier (default: 1.4) */
   maxScale?: number;
   /** Gap between items in pixels (default: 12) */
@@ -98,6 +100,7 @@ export const DockNav: React.FC<DockNavProps> = ({
   activeId,
   observeScroll = false,
   baseSize = 48,
+  iconSize,
   maxScale = 1.4,
   gap = 12,
   magnifyDistance = 100,
@@ -109,6 +112,7 @@ export const DockNav: React.FC<DockNavProps> = ({
   unstyled = false,
 }) => {
   const theme = { ...defaultTheme, ...userTheme };
+  const resolvedIconSize = iconSize ?? baseSize;
 
   const [mouseX, setMouseX] = useState<number | null>(null);
   const [isHoveringDock, setIsHoveringDock] = useState(false);
@@ -458,8 +462,8 @@ export const DockNav: React.FC<DockNavProps> = ({
               >
                 <Icon
                   style={{
-                    width: baseSize,
-                    height: baseSize,
+                    width: resolvedIconSize,
+                    height: resolvedIconSize,
                   }}
                 />
               </button>
