@@ -266,6 +266,7 @@ export const DockNav: React.FC<DockNavProps> = ({
 
   const showTooltip = (id: string, index: number) => {
     if (hideTooltips) return false;
+    if (!isHoveringDock) return false;
     const isClosest = closestIndex === index;
     const isFocused = focusedId === id;
     return isClosest || isFocused;
