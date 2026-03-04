@@ -116,7 +116,7 @@ export const DockNav: React.FC<DockNavProps> = ({
 
   const [mouseX, setMouseX] = useState<number | null>(null);
   const [isHoveringDock, setIsHoveringDock] = useState(false);
-  const [focusedId, setFocusedId] = useState<string | null>(null);
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [currentActiveId, setCurrentActiveId] = useState<string>(
     activeId || items[0]?.id || "",
   );
@@ -264,12 +264,9 @@ export const DockNav: React.FC<DockNavProps> = ({
     return closest;
   }, [isHoveringDock, mouseX, buttonRects]);
 
-  const showTooltip = (id: string, index: number) => {
+  const showTooltip = (id: string) => {
     if (hideTooltips) return false;
-    if (!isHoveringDock) return false;
-    const isClosest = closestIndex === index;
-    const isFocused = focusedId === id;
-    return isClosest || isFocused;
+    return hoveredId === id;
   };
 
   const transitionStyle = prefersReducedMotion
@@ -329,7 +326,7 @@ export const DockNav: React.FC<DockNavProps> = ({
           const isActive = currentActiveId === item.id;
           const sizeMultiplier = getSize(index);
           const translateY = (sizeMultiplier - 1) * baseSize * 0.5;
-          const isTooltipVisible = showTooltip(item.id, index);
+          const isTooltipVisible = showTooltip(item.id);
 
           const buttonStyle: CSSProperties = unstyled
             ? {
